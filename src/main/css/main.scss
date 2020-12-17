@@ -1,4 +1,7 @@
+@use 'partials/header';
 body {
-    background-color: grey;
-    color: green;
+  background-color: grey;
+  color: green;
+  padding: 15px;
+  @include header.header;
 }
