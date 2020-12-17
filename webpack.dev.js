@@ -1,10 +1,9 @@
-const path = require("path");
-const config = require("./webpack.config");
-const merge = require("webpack-merge");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path")
+const config = require("./webpack.config")
+const merge = require("webpack-merge")
 
 module.exports = merge(config, {
-  mode: "production",
+  mode: "development",
   devtool: "none",
   output: {
     filename: "[name].[contentHash].bundle.js",
@@ -15,11 +14,11 @@ module.exports = merge(config, {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          "style-loader",
           "css-loader", //2.Turns css into js
           "sass-loader", // 1. Turns sass into css
         ], //this works in reverse order
       },
     ],
   },
-});
+})
